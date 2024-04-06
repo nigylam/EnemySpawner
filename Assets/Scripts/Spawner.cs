@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemySpawner : MonoBehaviour
+public class Spawner : MonoBehaviour
 {
     [SerializeField] private SpawnPoint[] _spawnPoints;
     [SerializeField] private Enemy _enemy;
@@ -12,7 +12,6 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        _spawnDelay = new WaitForSeconds(_spawnDelayTime);
         _random = new System.Random();
         InvokeRepeating(nameof(Spawn), _spawnStartDelay, _spawnDelayTime);
     }
@@ -23,3 +22,4 @@ public class EnemySpawner : MonoBehaviour
         spawnPoint.SpawnEnemy(_enemy);
     }
 }
+
